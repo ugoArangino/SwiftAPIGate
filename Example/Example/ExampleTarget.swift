@@ -3,22 +3,35 @@ import SwiftAPIGate
 
 enum ExampleTarget {
     case gitHubOrganizations
+    case httpbinPOST
 }
 
 extension ExampleTarget: TargetType {
     var baseURL: URL {
-        URL(string: "https://api.github.com")!
+        switch self {
+        case .gitHubOrganizations:
+            URL(string: "https://api.github.com")!
+        case .httpbinPOST:
+            URL(string: "https://httpbin.org")!
+        }
     }
 
     var path: String {
         switch self {
         case .gitHubOrganizations:
-            return "/organizations"
+            "/organizations"
+        case .httpbinPOST:
+            "/post"
         }
     }
 
     var method: HTTPMethod {
-        .get
+        switch self {
+        case .gitHubOrganizations:
+            .get
+        case .httpbinPOST:
+            .post
+        }
     }
 
     var validationType: ValidationType {

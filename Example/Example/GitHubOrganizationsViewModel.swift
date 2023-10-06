@@ -2,7 +2,7 @@ import Foundation
 import SwiftAPIGate
 
 @Observable
-final class ViewModel {
+final class GitHubOrganizationsViewModel {
     private var middleware: ExampleTargetMiddleware
     private let provider: APIGate<ExampleTarget>
     var mode: FetchMode {
