@@ -7,6 +7,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("GitHub Organizations", systemImage: "circle.hexagongrid.fill")
                 }
+
+            HTTPBinPOSTView()
+                .tabItem {
+                    Label("httpbin.org POST", systemImage: "server.rack")
+                }
         }
     }
 }
