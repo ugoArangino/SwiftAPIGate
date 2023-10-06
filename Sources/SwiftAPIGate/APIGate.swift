@@ -9,6 +9,7 @@ protocol APIGateType: AnyObject {
 public final class APIGate<Target: TargetType>: APIGateType {
     let urlSession: URLSessionType
     let middleware: MiddlewareType?
+    private lazy var decoder = JSONDecoder()
 
     public init(
         urlSession: URLSessionType = URLSession.shared,
@@ -47,5 +48,12 @@ public final class APIGate<Target: TargetType>: APIGateType {
             request: request,
             response: response
         )
+    }
+
+    public func request<Value: Decodable>(_ target: Target) async throws -> (apiResponse: APIResponse, value: Value) {
+        let apiResponse = try await request(target)
+        let value = try decoder.decode(Value.self, from: apiResponse.data)
+
+        return (apiResponse, value)
     }
 }

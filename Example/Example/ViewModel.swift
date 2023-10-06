@@ -20,8 +20,7 @@ final class ViewModel {
 
     func load() async {
         do {
-            let apiResponse = try await provider.request(.organizations)
-            organizations = try JSONDecoder().decode([Organization].self, from: apiResponse.data)
+            organizations = try await provider.request(.organizations).value
         } catch {
             self.error = error
         }

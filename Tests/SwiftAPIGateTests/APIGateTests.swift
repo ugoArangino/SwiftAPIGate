@@ -74,6 +74,25 @@ final class APIGateTests: XCTestCase {
         ])
     }
 
+    func testLoadWithDecoding() async throws {
+        // Arrange
+        let exampleDecodable = ExampleDecodable(id: .init())
+        let exampleData = try JSONEncoder().encode(exampleDecodable)
+        sessionMock.setDataValue(
+            data: exampleData,
+            response: .init(url: Fixture.url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        )
+
+        // Act
+        let decodedResponse: ExampleDecodable = try await sut.request(.organizations).value
+
+        // Assert
+        XCTAssertEqual(decodedResponse, exampleDecodable)
+        XCTAssertEqual(sessionMock.dataInvocations, [
+            .init(url: .init(string: "https://api.github.com/organizations")!),
+        ])
+    }
+
     func testLoadFailed() async throws {
         // Arrange
         let error = URLError(.badServerResponse)
