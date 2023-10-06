@@ -3,8 +3,8 @@ import SwiftAPIGate
 
 @Observable
 final class ViewModel {
-    private var middleware: GitHubTargetMiddleware
-    private let provider: APIGate<GitHubTarget>
+    private var middleware: ExampleTargetMiddleware
+    private let provider: APIGate<ExampleTarget>
     var mode: FetchMode {
         middleware.mode
     }
@@ -13,14 +13,14 @@ final class ViewModel {
     private(set) var error: Error?
 
     init() {
-        let middleware = GitHubTargetMiddleware(mode: .all)
+        let middleware = ExampleTargetMiddleware(mode: .all)
         self.middleware = middleware
         provider = .init(middleware: middleware)
     }
 
     func load() async {
         do {
-            organizations = try await provider.request(.organizations).value
+            organizations = try await provider.request(.gitHubOrganizations).value
         } catch {
             self.error = error
         }

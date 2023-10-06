@@ -1,18 +1,18 @@
 import Foundation
 import SwiftAPIGate
 
-enum GitHubTarget {
-    case organizations
+enum ExampleTarget {
+    case gitHubOrganizations
 }
 
-extension GitHubTarget: TargetType {
+extension ExampleTarget: TargetType {
     var baseURL: URL {
         URL(string: "https://api.github.com")!
     }
 
     var path: String {
         switch self {
-        case .organizations:
+        case .gitHubOrganizations:
             return "/organizations"
         }
     }

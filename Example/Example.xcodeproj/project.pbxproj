@@ -14,9 +14,9 @@
 		1FCCF6942AD08EEB001550A6 /* SwiftAPIGate in Frameworks */ = {isa = PBXBuildFile; productRef = 1FCCF6932AD08EEB001550A6 /* SwiftAPIGate */; };
 		1FCCF6962AD08EF6001550A6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6952AD08EF6001550A6 /* ViewModel.swift */; };
 		1FCCF6982AD08F17001550A6 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6972AD08F17001550A6 /* Organization.swift */; };
-		1FCCF69A2AD08F2C001550A6 /* GitHubTargetMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6992AD08F2C001550A6 /* GitHubTargetMiddleware.swift */; };
+		1FCCF69A2AD08F2C001550A6 /* ExampleTargetMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6992AD08F2C001550A6 /* ExampleTargetMiddleware.swift */; };
 		1FCCF69C2AD08F47001550A6 /* FetchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF69B2AD08F47001550A6 /* FetchMode.swift */; };
-		1FCCF6A02AD090AF001550A6 /* GitHubTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF69F2AD090AF001550A6 /* GitHubTarget.swift */; };
+		1FCCF6A02AD090AF001550A6 /* ExampleTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF69F2AD090AF001550A6 /* ExampleTarget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +28,9 @@
 		1FCCF68F2AD08E91001550A6 /* SwiftAPIGate */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftAPIGate; path = ..; sourceTree = "<group>"; };
 		1FCCF6952AD08EF6001550A6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		1FCCF6972AD08F17001550A6 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
-		1FCCF6992AD08F2C001550A6 /* GitHubTargetMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTargetMiddleware.swift; sourceTree = "<group>"; };
+		1FCCF6992AD08F2C001550A6 /* ExampleTargetMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTargetMiddleware.swift; sourceTree = "<group>"; };
 		1FCCF69B2AD08F47001550A6 /* FetchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMode.swift; sourceTree = "<group>"; };
-		1FCCF69F2AD090AF001550A6 /* GitHubTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubTarget.swift; sourceTree = "<group>"; };
+		1FCCF69F2AD090AF001550A6 /* ExampleTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleTarget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 				1FCCF6832AD08DAF001550A6 /* ContentView.swift */,
 				1FCCF6812AD08DAF001550A6 /* ExampleApp.swift */,
 				1FCCF69B2AD08F47001550A6 /* FetchMode.swift */,
-				1FCCF69F2AD090AF001550A6 /* GitHubTarget.swift */,
-				1FCCF6992AD08F2C001550A6 /* GitHubTargetMiddleware.swift */,
+				1FCCF69F2AD090AF001550A6 /* ExampleTarget.swift */,
+				1FCCF6992AD08F2C001550A6 /* ExampleTargetMiddleware.swift */,
 				1FCCF6972AD08F17001550A6 /* Organization.swift */,
 				1FCCF6872AD08DB0001550A6 /* Preview Content */,
 				1FCCF6952AD08EF6001550A6 /* ViewModel.swift */,
@@ -170,10 +170,10 @@
 				1FCCF6842AD08DAF001550A6 /* ContentView.swift in Sources */,
 				1FCCF6982AD08F17001550A6 /* Organization.swift in Sources */,
 				1FCCF69C2AD08F47001550A6 /* FetchMode.swift in Sources */,
-				1FCCF69A2AD08F2C001550A6 /* GitHubTargetMiddleware.swift in Sources */,
+				1FCCF69A2AD08F2C001550A6 /* ExampleTargetMiddleware.swift in Sources */,
 				1FCCF6962AD08EF6001550A6 /* ViewModel.swift in Sources */,
 				1FCCF6822AD08DAF001550A6 /* ExampleApp.swift in Sources */,
-				1FCCF6A02AD090AF001550A6 /* GitHubTarget.swift in Sources */,
+				1FCCF6A02AD090AF001550A6 /* ExampleTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

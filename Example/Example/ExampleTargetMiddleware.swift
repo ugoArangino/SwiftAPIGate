@@ -1,7 +1,7 @@
 import Foundation
 import SwiftAPIGate
 
-class GitHubTargetMiddleware: MiddlewareType {
+class ExampleTargetMiddleware: MiddlewareType {
     var mode: FetchMode
 
     init(mode: FetchMode) {
