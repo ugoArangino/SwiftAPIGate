@@ -62,7 +62,7 @@ final class APIGateTests: XCTestCase {
         )
 
         // Act
-        let apiResponse = try await sut.request(.updateAuthenticatedUser)
+        let apiResponse = try await sut.request(.updateAuthenticatedUser(""))
 
         // Assert
         XCTAssertEqual(try XCTUnwrap(apiResponse.data), fakeData)
@@ -90,6 +90,28 @@ final class APIGateTests: XCTestCase {
         XCTAssertEqual(decodedResponse, exampleDecodable)
         XCTAssertEqual(sessionMock.dataInvocations, [
             .init(url: .init(string: "https://api.github.com/organizations")!),
+        ])
+    }
+
+    func testLoadWithBody() async throws {
+        // Arrange
+        let fakeData1 = #function.data(using: .utf8)
+        let fakeData2 = "requestBody".data(using: .utf8)
+        sessionMock.setDataValue(
+            data: fakeData1,
+            response: .init(url: Fixture.url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        )
+
+        // Act
+        let apiResponse = try await sut.request(.updateAuthenticatedUser("requestBody"))
+
+        // Assert
+        XCTAssertEqual(try XCTUnwrap(apiResponse.data), fakeData1)
+        XCTAssertEqual(sessionMock.dataInvocations.map(\.url), [
+            .init(string: "https://api.github.com/users")!,
+        ])
+        XCTAssertEqual(sessionMock.dataInvocations.map(\.httpBody), [
+            fakeData2,
         ])
     }
 

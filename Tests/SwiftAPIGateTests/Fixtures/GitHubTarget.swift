@@ -4,7 +4,7 @@ import SwiftAPIGate
 enum GitHubTarget {
     case organizations
     case userProfile(String)
-    case updateAuthenticatedUser
+    case updateAuthenticatedUser(String)
 }
 
 extension GitHubTarget: TargetType {
@@ -42,6 +42,14 @@ extension GitHubTarget: TargetType {
         switch self {
         case .userProfile:
             ["X-GitHub-Api-Version": "2022-11-28"]
+        default: nil
+        }
+    }
+
+    var body: Data? {
+        switch self {
+        case let .updateAuthenticatedUser(body):
+            body.data(using: .utf8)
         default: nil
         }
     }

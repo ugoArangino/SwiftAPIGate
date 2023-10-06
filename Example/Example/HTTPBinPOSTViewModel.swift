@@ -15,7 +15,7 @@ final class HTTPBinPOSTViewModel {
     func post() {
         Task {
             do {
-                response = try await provider.request(.httpbinPOST)
+                response = try await provider.request(.httpbinPOST(.init()))
                 error = nil
             } catch {
                 self.error = error

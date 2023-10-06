@@ -32,6 +32,7 @@ public final class APIGate<Target: TargetType>: APIGateType {
         headers?.forEach {
             request.addValue($0.value, forHTTPHeaderField: $0.key)
         }
+        request.httpBody = target.body
         request = middleware?.request(request, target) ?? request
 
         let (data, urlResponse) = try await urlSession.data(for: request)
