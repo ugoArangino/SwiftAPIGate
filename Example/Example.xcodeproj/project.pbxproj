@@ -11,6 +11,12 @@
 		1FCCF6842AD08DAF001550A6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6832AD08DAF001550A6 /* ContentView.swift */; };
 		1FCCF6862AD08DB0001550A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCCF6852AD08DB0001550A6 /* Assets.xcassets */; };
 		1FCCF6892AD08DB0001550A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FCCF6882AD08DB0001550A6 /* Preview Assets.xcassets */; };
+		1FCCF6942AD08EEB001550A6 /* SwiftAPIGate in Frameworks */ = {isa = PBXBuildFile; productRef = 1FCCF6932AD08EEB001550A6 /* SwiftAPIGate */; };
+		1FCCF6962AD08EF6001550A6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6952AD08EF6001550A6 /* ViewModel.swift */; };
+		1FCCF6982AD08F17001550A6 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6972AD08F17001550A6 /* Organization.swift */; };
+		1FCCF69A2AD08F2C001550A6 /* GitHubTargetMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF6992AD08F2C001550A6 /* GitHubTargetMiddleware.swift */; };
+		1FCCF69C2AD08F47001550A6 /* FetchMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF69B2AD08F47001550A6 /* FetchMode.swift */; };
+		1FCCF6A02AD090AF001550A6 /* GitHubTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCCF69F2AD090AF001550A6 /* GitHubTarget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		1FCCF6832AD08DAF001550A6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1FCCF6852AD08DB0001550A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FCCF6882AD08DB0001550A6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FCCF68F2AD08E91001550A6 /* SwiftAPIGate */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftAPIGate; path = ..; sourceTree = "<group>"; };
+		1FCCF6952AD08EF6001550A6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1FCCF6972AD08F17001550A6 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
+		1FCCF6992AD08F2C001550A6 /* GitHubTargetMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTargetMiddleware.swift; sourceTree = "<group>"; };
+		1FCCF69B2AD08F47001550A6 /* FetchMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMode.swift; sourceTree = "<group>"; };
+		1FCCF69F2AD090AF001550A6 /* GitHubTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubTarget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCCF6942AD08EEB001550A6 /* SwiftAPIGate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,7 +49,9 @@
 			isa = PBXGroup;
 			children = (
 				1FCCF6802AD08DAF001550A6 /* Example */,
+				1FCCF6922AD08EEB001550A6 /* Frameworks */,
 				1FCCF67F2AD08DAF001550A6 /* Products */,
+				1FCCF68F2AD08E91001550A6 /* SwiftAPIGate */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +66,15 @@
 		1FCCF6802AD08DAF001550A6 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				1FCCF6812AD08DAF001550A6 /* ExampleApp.swift */,
-				1FCCF6832AD08DAF001550A6 /* ContentView.swift */,
 				1FCCF6852AD08DB0001550A6 /* Assets.xcassets */,
+				1FCCF6832AD08DAF001550A6 /* ContentView.swift */,
+				1FCCF6812AD08DAF001550A6 /* ExampleApp.swift */,
+				1FCCF69B2AD08F47001550A6 /* FetchMode.swift */,
+				1FCCF69F2AD090AF001550A6 /* GitHubTarget.swift */,
+				1FCCF6992AD08F2C001550A6 /* GitHubTargetMiddleware.swift */,
+				1FCCF6972AD08F17001550A6 /* Organization.swift */,
 				1FCCF6872AD08DB0001550A6 /* Preview Content */,
+				1FCCF6952AD08EF6001550A6 /* ViewModel.swift */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -65,6 +85,13 @@
 				1FCCF6882AD08DB0001550A6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1FCCF6922AD08EEB001550A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +110,9 @@
 			dependencies = (
 			);
 			name = Example;
+			packageProductDependencies = (
+				1FCCF6932AD08EEB001550A6 /* SwiftAPIGate */,
+			);
 			productName = Example;
 			productReference = 1FCCF67E2AD08DAF001550A6 /* Example.app */;
 			productType = "com.apple.product-type.application";
@@ -138,7 +168,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FCCF6842AD08DAF001550A6 /* ContentView.swift in Sources */,
+				1FCCF6982AD08F17001550A6 /* Organization.swift in Sources */,
+				1FCCF69C2AD08F47001550A6 /* FetchMode.swift in Sources */,
+				1FCCF69A2AD08F2C001550A6 /* GitHubTargetMiddleware.swift in Sources */,
+				1FCCF6962AD08EF6001550A6 /* ViewModel.swift in Sources */,
 				1FCCF6822AD08DAF001550A6 /* ExampleApp.swift in Sources */,
+				1FCCF6A02AD090AF001550A6 /* GitHubTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +381,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FCCF6932AD08EEB001550A6 /* SwiftAPIGate */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftAPIGate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FCCF6762AD08DAF001550A6 /* Project object */;
 }
