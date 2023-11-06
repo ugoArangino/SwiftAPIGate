@@ -20,7 +20,7 @@ public final class APIGate<Target: TargetType>: APIGateType {
     }
 
     public func request(_ target: Target) async throws -> APIResponse {
-        let updatedTarget: TargetType = middleware?.target(target) ?? target
+        let updatedTarget: TargetType = try await middleware?.target(target) ?? target
         let baseURL = updatedTarget.baseURL
         let path = updatedTarget.path
         let method = updatedTarget.method
@@ -33,7 +33,7 @@ public final class APIGate<Target: TargetType>: APIGateType {
             request.addValue($0.value, forHTTPHeaderField: $0.key)
         }
         request.httpBody = target.body
-        request = middleware?.request(request, target) ?? request
+        request = try await middleware?.request(request, target) ?? request
 
         let (data, urlResponse) = try await urlSession.data(for: request)
 
