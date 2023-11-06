@@ -32,7 +32,7 @@ extension ExampleTarget: TargetType {
         }
     }
 
-    var path: String {
+    var path: String? {
         switch self {
         case .gitHubOrganizations:
             "/organizations"

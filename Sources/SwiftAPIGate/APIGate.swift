@@ -27,7 +27,12 @@ public final class APIGate<Target: TargetType>: APIGateType {
         let validationType = updatedTarget.validationType
         let headers = updatedTarget.headers
 
-        var request = URLRequest(url: baseURL.appendingPathComponent(path))
+        let requestURL: URL = if let path {
+            baseURL.appendingPathComponent(path)
+        } else {
+            baseURL
+        }
+        var request = URLRequest(url: requestURL)
         request.httpMethod = method.rawValue
         headers?.forEach {
             request.addValue($0.value, forHTTPHeaderField: $0.key)

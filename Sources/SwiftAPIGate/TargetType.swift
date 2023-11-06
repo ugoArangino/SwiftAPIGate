@@ -5,7 +5,7 @@ public protocol TargetType: CustomStringConvertible {
     var baseURL: URL { get }
 
     /// The path to be appended to `baseURL` to form the full `URL`.
-    var path: String { get }
+    var path: String? { get }
 
     /// The HTTP method used.
     var method: HTTPMethod { get }

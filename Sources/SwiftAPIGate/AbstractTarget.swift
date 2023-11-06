@@ -2,7 +2,7 @@ import Foundation
 
 public struct AbstractTarget: TargetType {
     public let baseURL: URL
-    public let path: String
+    public let path: String?
     public let method: HTTPMethod
     public let validationType: ValidationType
     public let headers: [String: String]?
@@ -10,7 +10,7 @@ public struct AbstractTarget: TargetType {
 
     public init(
         baseURL: URL,
-        path: String,
+        path: String?,
         method: HTTPMethod,
         validationType: ValidationType = .none,
         headers: [String: String]? = nil,

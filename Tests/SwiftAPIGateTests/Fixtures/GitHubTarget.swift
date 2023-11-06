@@ -12,7 +12,7 @@ extension GitHubTarget: TargetType {
         URL(string: "https://api.github.com")!
     }
 
-    var path: String {
+    var path: String? {
         switch self {
         case .organizations:
             "/organizations"
