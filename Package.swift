@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "SwiftAPIGate",
     platforms: [
-        .iOS(.v17),
+        .iOS(.v15),
         .macOS(.v10_15),
     ],
     products: [
