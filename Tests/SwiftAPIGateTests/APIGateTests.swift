@@ -23,12 +23,30 @@ final class APIGateTests: XCTestCase {
         )
 
         // Act
+        let apiResponse = try await sut.request(.userProfile("test"))
+
+        // Assert
+        XCTAssertEqual(try XCTUnwrap(apiResponse.data), fakeData)
+        XCTAssertEqual(sessionMock.dataInvocations.map(\.url), [
+            .init(string: "https://api.github.com/users/test")!,
+        ])
+    }
+
+    func testLoadWithQueryParameters() async throws {
+        // Arrange
+        let fakeData = #function.data(using: .utf8)
+        sessionMock.setDataValue(
+            data: fakeData,
+            response: .init(url: Fixture.url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        )
+
+        // Act
         let apiResponse = try await sut.request(.organizations)
 
         // Assert
         XCTAssertEqual(try XCTUnwrap(apiResponse.data), fakeData)
-        XCTAssertEqual(sessionMock.dataInvocations, [
-            .init(url: .init(string: "https://api.github.com/organizations")!),
+        XCTAssertEqual(sessionMock.dataInvocations.map(\.url), [
+            .init(string: "https://api.github.com/organizations?per_page=5")!,
         ])
     }
 
@@ -88,8 +106,8 @@ final class APIGateTests: XCTestCase {
 
         // Assert
         XCTAssertEqual(decodedResponse, exampleDecodable)
-        XCTAssertEqual(sessionMock.dataInvocations, [
-            .init(url: .init(string: "https://api.github.com/organizations")!),
+        XCTAssertEqual(sessionMock.dataInvocations.map(\.url), [
+            .init(string: "https://api.github.com/organizations?per_page=5")!,
         ])
     }
 
@@ -130,8 +148,8 @@ final class APIGateTests: XCTestCase {
 
         // Assert
         await XCTAssertThrowsAsyncError(try await act())
-        XCTAssertEqual(sessionMock.dataInvocations, [
-            .init(url: .init(string: "https://api.github.com/organizations")!),
+        XCTAssertEqual(sessionMock.dataInvocations.map(\.url), [
+            .init(string: "https://api.github.com/organizations?per_page=5")!,
         ])
     }
 }

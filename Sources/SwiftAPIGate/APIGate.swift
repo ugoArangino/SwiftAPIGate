@@ -23,15 +23,25 @@ public final class APIGate<Target: TargetType>: APIGateType {
         let updatedTarget: TargetType = try await middleware?.target(target) ?? target
         let baseURL = updatedTarget.baseURL
         let path = updatedTarget.path
+        let queryParameters = updatedTarget.queryParameters
         let method = updatedTarget.method
         let validationType = updatedTarget.validationType
         let headers = updatedTarget.headers
 
-        let requestURL: URL = if let path {
-            baseURL.appendingPathComponent(path)
-        } else {
-            baseURL
+        guard var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: false) else {
+            throw URLError(.badURL)
         }
+        if let path = path {
+            components.path = path
+        }
+        if let queryParameters = queryParameters {
+            components.queryItems = queryParameters.map { URLQueryItem(name: $0.key, value: $0.value) }
+        }
+
+        guard let requestURL = components.url else {
+            throw URLError(.badURL)
+        }
+
         var request = URLRequest(url: requestURL)
         request.httpMethod = method.rawValue
         headers?.forEach {

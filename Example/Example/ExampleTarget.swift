@@ -41,6 +41,17 @@ extension ExampleTarget: TargetType {
         }
     }
 
+    var queryParameters: [String: String]? {
+        switch self {
+        case .gitHubOrganizations:
+            [
+                "per_page": "5",
+            ]
+        case .httpbinPOST:
+            nil
+        }
+    }
+
     var method: HTTPMethod {
         switch self {
         case .gitHubOrganizations:

@@ -7,6 +7,9 @@ public protocol TargetType: CustomStringConvertible {
     /// The path to be appended to `baseURL` to form the full `URL`.
     var path: String? { get }
 
+    /// The query parameters to be appended to the `URL`.
+    var queryParameters: [String: String]? { get }
+
     /// The HTTP method used.
     var method: HTTPMethod { get }
 

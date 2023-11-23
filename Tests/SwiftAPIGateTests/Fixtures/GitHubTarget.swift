@@ -23,6 +23,17 @@ extension GitHubTarget: TargetType {
         }
     }
 
+    var queryParameters: [String: String]? {
+        switch self {
+        case .organizations:
+            [
+                "per_page": "5",
+            ]
+        default:
+            nil
+        }
+    }
+
     var method: HTTPMethod {
         switch self {
         case .organizations:
